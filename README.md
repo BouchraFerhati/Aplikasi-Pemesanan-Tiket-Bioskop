@@ -1,7 +1,7 @@
 # Aplikasi-Pemesanan-Tiket-Bioskop
 
 ## Disusun oleh : 
- Pemrograman Berorentasi Objek (F)
+ Pemrograman Berorientasi Objek (F)
  - Ferhati Bouchra          (2005551068)
  - Elvira Amanda Salsabilla (2005551092)
 
