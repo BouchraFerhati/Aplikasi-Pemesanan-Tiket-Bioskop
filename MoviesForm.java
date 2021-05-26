@@ -21,6 +21,8 @@ import javax.swing.border.Border;
  * @author User
  */
 public class MoviesForm extends javax.swing.JFrame {
+    String film;
+    public static javax.swing.JTextField tf_jam;
 
     /**
      * Creates new form MoviesForm
@@ -365,7 +367,13 @@ public class MoviesForm extends javax.swing.JFrame {
         godzilla.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.dispose();
         
-       
+        film="Godzilla VS Kong";
+        buttonnerve.setSelected(false);
+        buttonthebox.setSelected(false);
+        
+        KursiStudioGK.tf_namafilm.setText(film);
+        
+        KursiStudioGK.tf_jam.setText("12.30-14.00");
         
 
     }//GEN-LAST:event_buttongodzillaActionPerformed
@@ -376,6 +384,13 @@ public class MoviesForm extends javax.swing.JFrame {
         thebox.pack();
         thebox.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.dispose();
+        
+        film="The Box";
+        buttongodzilla.setSelected(false);
+        buttonnerve.setSelected(false);
+        
+        KursiStudioTB.tf_namafilm.setText(film);
+        KursiStudioTB.tf_jam.setText("15.00-18.00");
         
        
         
@@ -388,7 +403,13 @@ public class MoviesForm extends javax.swing.JFrame {
         nerve.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.dispose();
         
-     
+        film="Nerve";
+        buttongodzilla.setSelected(false);
+        buttonthebox.setSelected(false);
+        
+        KursiStudioNerve.tf_namafilm.setText(film);
+        
+        KursiStudioNerve.tf_jam.setText("19.00-21.30");
        
     }//GEN-LAST:event_buttonnerveActionPerformed
 
