@@ -13,7 +13,14 @@ import javax.swing.JOptionPane;
  * @author ASUS
  */
 public class KursiStudioTB extends javax.swing.JFrame {
-   
+     public String film;
+     public int pil;
+     public javax.swing.JButton buttongodzilla;
+     public javax.swing.JButton buttonthebox;
+     public javax.swing.JButton buttonnerve;
+     public String kursi;
+     int harga, hasil, jumlah, uang, kembali;
+     int jmlkursi;
 
     /**
      * Creates new form KursiStudioTB
@@ -520,91 +527,139 @@ public class KursiStudioTB extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonback1ActionPerformed
 
     private void checkbox_b6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbox_b6ActionPerformed
-       
+        kursi = tf_nokursi.getText()+ checkbox_b6.getText();
+        tf_nokursi.setText(kursi);
+        checkbox_b6.setEnabled(false);
     }//GEN-LAST:event_checkbox_b6ActionPerformed
 
     private void checkbox_b5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbox_b5ActionPerformed
-        
+        kursi = tf_nokursi.getText()+ checkbox_b5.getText();
+        tf_nokursi.setText(kursi);
+        checkbox_b5.setEnabled(false);
     }//GEN-LAST:event_checkbox_b5ActionPerformed
 
     private void checkbox_b4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbox_b4ActionPerformed
-    
+        kursi = tf_nokursi.getText()+ checkbox_b4.getText();
+        tf_nokursi.setText(kursi);
+        checkbox_b4.setEnabled(false);
     }//GEN-LAST:event_checkbox_b4ActionPerformed
 
     private void checkbox_b2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbox_b2ActionPerformed
-        
+        kursi = tf_nokursi.getText()+ checkbox_b2.getText();
+        tf_nokursi.setText(kursi);
+        checkbox_b2.setEnabled(false);
     }//GEN-LAST:event_checkbox_b2ActionPerformed
 
     private void checkbox_b3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbox_b3ActionPerformed
-        
+        kursi = tf_nokursi.getText()+ checkbox_b3.getText();
+        tf_nokursi.setText(kursi);
+        checkbox_b3.setEnabled(false);
     }//GEN-LAST:event_checkbox_b3ActionPerformed
 
     private void checkbox_b1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbox_b1ActionPerformed
-        
+        kursi = tf_nokursi.getText()+ checkbox_b1.getText();
+        tf_nokursi.setText(kursi);
+        checkbox_b1.setEnabled(false);
     }//GEN-LAST:event_checkbox_b1ActionPerformed
 
     private void checkbox_a6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbox_a6ActionPerformed
-       
+        kursi = tf_nokursi.getText()+ checkbox_a6.getText();
+        tf_nokursi.setText(kursi);
+        checkbox_a6.setEnabled(false);
     }//GEN-LAST:event_checkbox_a6ActionPerformed
 
     private void checkbox_a5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbox_a5ActionPerformed
-       
+        kursi = tf_nokursi.getText()+ checkbox_a5.getText();
+        tf_nokursi.setText(kursi);
+        checkbox_a5.setEnabled(false);
     }//GEN-LAST:event_checkbox_a5ActionPerformed
 
     private void checkbox_a3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbox_a3ActionPerformed
-        
+        kursi = tf_nokursi.getText()+ checkbox_a3.getText();
+        tf_nokursi.setText(kursi);
+        checkbox_a3.setEnabled(false);
     }//GEN-LAST:event_checkbox_a3ActionPerformed
 
     private void checkbox_a4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbox_a4ActionPerformed
-     
+        kursi = tf_nokursi.getText()+ checkbox_a4.getText();
+        tf_nokursi.setText(kursi);
+        checkbox_a4.setEnabled(false);
     }//GEN-LAST:event_checkbox_a4ActionPerformed
 
     private void checkbox_a2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbox_a2ActionPerformed
-        
+        kursi = tf_nokursi.getText()+ checkbox_a2.getText();
+        tf_nokursi.setText(kursi);
+        checkbox_a2.setEnabled(false);
     }//GEN-LAST:event_checkbox_a2ActionPerformed
 
     private void checkbox_a1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbox_a1ActionPerformed
-        
+        kursi = tf_nokursi.getText()+ checkbox_a1.getText();
+        tf_nokursi.setText(kursi);
+        checkbox_a1.setEnabled(false);
     }//GEN-LAST:event_checkbox_a1ActionPerformed
 
-    private void tf_namafilmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_namafilmActionPerformed
-
-    }//GEN-LAST:event_tf_namafilmActionPerformed
-
     private void cb_hariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_hariActionPerformed
-
+         if(cb_hari.getSelectedItem().equals("Senin")){
+            harga = 40000;
+        }else if(cb_hari.getSelectedItem().equals("Selasa")){
+            harga = 40000;
+        }else if(cb_hari.getSelectedItem().equals("Rabu")){
+            harga = 40000;
+        }else if(cb_hari.getSelectedItem().equals("Kamis")){
+            harga = 40000;
+        }else if(cb_hari.getSelectedItem().equals("Jumat")){
+            harga = 50000;
+        }else if(cb_hari.getSelectedItem().equals("Sabtu")){
+            harga = 65000;
+        }else if(cb_hari.getSelectedItem().equals("Minggu")){
+            harga = 65000;
+        }
     }//GEN-LAST:event_cb_hariActionPerformed
 
-    private void tf_jamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_jamActionPerformed
-
-    }//GEN-LAST:event_tf_jamActionPerformed
-
-    private void tf_jamKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_jamKeyReleased
-
-    }//GEN-LAST:event_tf_jamKeyReleased
-
-    private void tf_hargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_hargaActionPerformed
-
-        
-    }//GEN-LAST:event_tf_hargaActionPerformed
-
-    private void tf_uangbyrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_uangbyrActionPerformed
-
-    }//GEN-LAST:event_tf_uangbyrActionPerformed
-
-    private void tf_uangbyrKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_uangbyrKeyReleased
-       
-    }//GEN-LAST:event_tf_uangbyrKeyReleased
+    private void tf_uangbyrKeyReleased(java.awt.event.KeyEvent evt) {                                       
+        uang =Integer.parseInt(String.valueOf(tf_uangbyr.getText()));
+        kembali = uang - hasil;
+        tf_uangkembali.setText(String.valueOf(kembali));
+    }     
 
     private void buttonreset1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonreset1ActionPerformed
-       
-    }//GEN-LAST:event_buttonreset1ActionPerformed
+        tf_jmltiket.setText("");
+        tf_harga.setText("");
+        tf_uangbyr.setText("");
+        tf_uangkembali.setText("");
+        tf_nokursi.setText("");
+        cb_hari.setSelectedIndex(0);
 
-    private void tf_jmltiketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_jmltiketActionPerformed
-
-    }//GEN-LAST:event_tf_jmltiketActionPerformed
+        checkbox_a1.setEnabled(true);
+        checkbox_a2.setEnabled(true);
+        checkbox_a3.setEnabled(true);
+        checkbox_a4.setEnabled(true);
+        checkbox_a5.setEnabled(true);
+        checkbox_a6.setEnabled(true);
+        checkbox_b1.setEnabled(true);
+        checkbox_b2.setEnabled(true);
+        checkbox_b3.setEnabled(true);
+        checkbox_b4.setEnabled(true);
+        checkbox_b5.setEnabled(true);
+        checkbox_b6.setEnabled(true);
+        checkbox_a1.setSelected(false);
+        checkbox_a2.setSelected(false);
+        checkbox_a3.setSelected(false);
+        checkbox_a4.setSelected(false);
+        checkbox_a5.setSelected(false);
+        checkbox_a6.setSelected(false);
+        checkbox_b1.setSelected(false);
+        checkbox_b2.setSelected(false);
+        checkbox_b3.setSelected(false);
+        checkbox_b4.setSelected(false);
+        checkbox_b5.setSelected(false);
+        checkbox_b6.setSelected(false);
+    }
 
     private void tf_jmltiketKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_jmltiketKeyReleased
+        jumlah =Integer.parseInt(String.valueOf(tf_jmltiket.getText()));
+        hasil = jumlah * harga;
+        tf_harga.setText(String.valueOf(hasil));
       
     }//GEN-LAST:event_tf_jmltiketKeyReleased
 
