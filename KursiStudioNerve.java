@@ -21,7 +21,8 @@ public class KursiStudioNerve extends javax.swing.JFrame {
      public String kursi;
      int harga, hasil, jumlah, uang, kembali;
      int jmlkursi;
-     String jam;
+     String jam, hari;
+     int counter = 0;
 
 
     /**
@@ -518,8 +519,48 @@ public class KursiStudioNerve extends javax.swing.JFrame {
 
     private void buttonnext1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonnext1ActionPerformed
 
-        // pesan sukses
-        JOptionPane.showMessageDialog(null, "Your Ticket Successfully Booked!");
+       String namafilm = tf_namafilm.getText();
+        String hari = String.valueOf(cb_hari.getSelectedItem());
+        String jamtayang= tf_jam.getText();
+        String nokursi = tf_nokursi.getText();
+        String jumlahtiket = tf_jmltiket.getText();
+        String harga_total = tf_harga.getText();
+      
+        
+        if(validasikolom())
+        {
+            if(!validasikursi(nokursi))
+            {
+                PreparedStatement ps;
+                ResultSet rs;
+                String kursi_user_query = "INSERT INTO tb_booking_nerve (nama_film, hari, jam, nomor_kursi, jumlah_tiket, total_harga) VALUES (?,?,?,?,?,?)" ;
+                
+                
+                try {
+                    // memanggil class javatomysql
+                    ps = javatomysql.getConnection().prepareStatement(kursi_user_query);
+                    // mengambil inputan
+                    ps.setString(1, namafilm);
+                    ps.setString(2, hari);
+                    ps.setString(3, jamtayang);
+                    ps.setString(4, nokursi);
+                    ps.setString(5, jumlahtiket);
+                    ps.setString(6, harga_total);
+
+                    if(ps.executeUpdate()!=0){
+                        // pesan sukses
+                        JOptionPane.showMessageDialog(null, "Your Ticket Successfully Booked!");
+                    }
+                    else{
+                        // pesan error
+                        JOptionPane.showMessageDialog(null, "Error : Check Your Information");
+                    }
+
+                } catch (SQLException ex) {
+                    Logger.getLogger(KursiStudioNerve.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
     }//GEN-LAST:event_buttonnext1ActionPerformed
 
     private void buttonback1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonback1ActionPerformed
@@ -531,72 +572,84 @@ public class KursiStudioNerve extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonback1ActionPerformed
 
     private void checkbox_b6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbox_b6ActionPerformed
+        counter++;
         kursi = tf_nokursi.getText()+ checkbox_b6.getText();
         tf_nokursi.setText(kursi);
         checkbox_b6.setEnabled(false);
     }//GEN-LAST:event_checkbox_b6ActionPerformed
 
     private void checkbox_b5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbox_b5ActionPerformed
+        counter++;
         kursi = tf_nokursi.getText()+ checkbox_b5.getText();
         tf_nokursi.setText(kursi);
         checkbox_b5.setEnabled(false);
     }//GEN-LAST:event_checkbox_b5ActionPerformed
 
     private void checkbox_b4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbox_b4ActionPerformed
+        counter++;
         kursi = tf_nokursi.getText()+ checkbox_b4.getText();
         tf_nokursi.setText(kursi);
         checkbox_b4.setEnabled(false);
     }//GEN-LAST:event_checkbox_b4ActionPerformed
 
     private void checkbox_b2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbox_b2ActionPerformed
+        counter++;
         kursi = tf_nokursi.getText()+ checkbox_b2.getText();
         tf_nokursi.setText(kursi);
         checkbox_b2.setEnabled(false);
     }//GEN-LAST:event_checkbox_b2ActionPerformed
 
     private void checkbox_b3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbox_b3ActionPerformed
+        counter++;
         kursi = tf_nokursi.getText()+ checkbox_b3.getText();
         tf_nokursi.setText(kursi);
         checkbox_b3.setEnabled(false);
     }//GEN-LAST:event_checkbox_b3ActionPerformed
 
     private void checkbox_b1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbox_b1ActionPerformed
+        counter++;
         kursi = tf_nokursi.getText()+ checkbox_b1.getText();
         tf_nokursi.setText(kursi);
         checkbox_b1.setEnabled(false);
     }//GEN-LAST:event_checkbox_b1ActionPerformed
 
     private void checkbox_a6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbox_a6ActionPerformed
+        counter++;
         kursi = tf_nokursi.getText()+ checkbox_a6.getText();
         tf_nokursi.setText(kursi);
         checkbox_a6.setEnabled(false);
     }//GEN-LAST:event_checkbox_a6ActionPerformed
 
     private void checkbox_a5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbox_a5ActionPerformed
+        counter++;
         kursi = tf_nokursi.getText()+ checkbox_a5.getText();
         tf_nokursi.setText(kursi);
         checkbox_a5.setEnabled(false);
     }//GEN-LAST:event_checkbox_a5ActionPerformed
 
     private void checkbox_a3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbox_a3ActionPerformed
+        counter++;
         kursi = tf_nokursi.getText()+ checkbox_a3.getText();
         tf_nokursi.setText(kursi);
         checkbox_a3.setEnabled(false);
     }//GEN-LAST:event_checkbox_a3ActionPerformed
 
     private void checkbox_a4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbox_a4ActionPerformed
+        counter++;
         kursi = tf_nokursi.getText()+ checkbox_a4.getText();
         tf_nokursi.setText(kursi);
         checkbox_a4.setEnabled(false);
     }//GEN-LAST:event_checkbox_a4ActionPerformed
 
     private void checkbox_a2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbox_a2ActionPerformed
+        counter++;
         kursi = tf_nokursi.getText()+ checkbox_a2.getText();
         tf_nokursi.setText(kursi);
         checkbox_a2.setEnabled(false);
     }//GEN-LAST:event_checkbox_a2ActionPerformed
 
     private void checkbox_a1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbox_a1ActionPerformed
+        counter++;
         kursi = tf_nokursi.getText()+ checkbox_a1.getText();
         tf_nokursi.setText(kursi);
         checkbox_a1.setEnabled(false);
@@ -648,7 +701,9 @@ public class KursiStudioNerve extends javax.swing.JFrame {
     }//GEN-LAST:event_tf_hargaActionPerformed
 
     private void tf_uangbyrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_uangbyrActionPerformed
-
+        uang =Integer.parseInt(String.valueOf(tf_uangbyr.getText()));
+        kembali = uang - hasil;
+        tf_uangkembali.setText(String.valueOf(kembali));
     }//GEN-LAST:event_tf_uangbyrActionPerformed
 
     private void tf_uangbyrKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_uangbyrKeyReleased
@@ -664,6 +719,7 @@ public class KursiStudioNerve extends javax.swing.JFrame {
         tf_uangkembali.setText("");
         tf_nokursi.setText("");
         cb_hari.setSelectedIndex(0);
+        counter = 0;
 
         checkbox_a1.setEnabled(true);
         checkbox_a2.setEnabled(true);
@@ -701,6 +757,61 @@ public class KursiStudioNerve extends javax.swing.JFrame {
         tf_harga.setText(String.valueOf(hasil));
     }//GEN-LAST:event_tf_jmltiketKeyReleased
 
+     private void konfirmasiActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        
+        hasil = counter * harga;
+        tf_harga.setText(String.valueOf(hasil));
+        tf_jmltiket.setText(String.valueOf(counter));
+    }
+     
+     public boolean validasikolom()
+    {   // mengambil data
+        String namafilm = tf_namafilm.getText();
+        String hari = String.valueOf(cb_hari.getSelectedItem());
+        String jamtayang = tf_jam.getText();
+        String nokursi = tf_nokursi.getText();
+        String jumlahtiket = tf_jmltiket.getText();
+        String harga_total = tf_harga.getText();
+        
+        // periksa kolom kosong
+        if(namafilm.trim().equals("") || nokursi.trim().equals("") 
+            || jumlahtiket.trim().equals("") || harga_total.trim().equals(""))
+        { // jika kosong
+           JOptionPane.showMessageDialog(null, "One Or More Field Are Empty","Empty Fields",2);
+           return false;
+        } // jika tidak kosong
+        else{
+            return true;
+        }
+    }
+
+        public boolean validasikursi(String nokursi){
+            PreparedStatement st;
+            ResultSet rs;
+            boolean kursi_exist = false;
+        
+            String query = "SELECT * FROM tb_booking_nerve WHERE nomor_kursi = ?";
+        
+            try {
+             // memanggil class javatomysql
+                st = javatomysql.getConnection().prepareStatement(query);
+                st.setString(1,nokursi);
+                rs = st.executeQuery();
+            
+                // jika akun sudah ada dalam database
+                if(rs.next())
+                {
+                    kursi_exist = true;
+                    // pesan error
+                    JOptionPane.showMessageDialog(null, "Kursi tidak tersedia");  
+                }
+            
+            } catch (SQLException ex) {
+                Logger.getLogger(KursiStudioNerve.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        return kursi_exist;
+            }
+     
     /**
      * @param args the command line arguments
      */
