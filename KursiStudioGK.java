@@ -731,21 +731,7 @@ public class KursiStudioGK extends javax.swing.JFrame {
     }//GEN-LAST:event_tf_uangbyrActionPerformed
 
     private void tf_hargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_hargaActionPerformed
-        if(cb_hari.getSelectedItem().equals("Senin")){
-            harga = 40000;
-        }else if(cb_hari.getSelectedItem().equals("Selasa")){
-            harga = 40000;
-        }else if(cb_hari.getSelectedItem().equals("Rabu")){
-            harga = 40000;
-        }else if(cb_hari.getSelectedItem().equals("Kamis")){
-            harga = 40000;
-        }else if(cb_hari.getSelectedItem().equals("Jumat")){
-            harga = 50000;
-        }else if(cb_hari.getSelectedItem().equals("Sabtu")){
-            harga = 65000;
-        }else if(cb_hari.getSelectedItem().equals("Minggu")){
-            harga = 65000;
-        }
+     
     }//GEN-LAST:event_tf_hargaActionPerformed
 
     private void tf_uangbyrKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_uangbyrKeyReleased
