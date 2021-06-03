@@ -22,6 +22,9 @@ public class KursiStudioGK extends javax.swing.JFrame {
      public String kursi;
      int harga, hasil, jumlah, uang, kembali;
      int jmlkursi;
+     String jam, hari;
+     int counter = 0;
+     
     /**
      * Creates new form KursiStudioGK
      */
@@ -78,6 +81,7 @@ public class KursiStudioGK extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tf_jmltiket = new javax.swing.JTextField();
         judul5 = new javax.swing.JPanel();
+        konfirmasi = new javax.swing.JButton();
         jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
@@ -517,8 +521,48 @@ public class KursiStudioGK extends javax.swing.JFrame {
 
     private void buttonnextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonnextActionPerformed
 
-       // pesan sukses
-       JOptionPane.showMessageDialog(null, "Your Ticket Successfully Booked!");
+        String namafilm = tf_namafilm.getText();
+        String hari = String.valueOf(cb_hari.getSelectedItem());
+        String jamtayang= tf_jam.getText();
+        String nokursi = tf_nokursi.getText();
+        String jumlahtiket = tf_jmltiket.getText();
+        String harga_total = tf_harga.getText();
+      
+        
+        if(validasikolom())
+        {
+            if(!validasikursi(nokursi))
+            {
+                PreparedStatement ps;
+                ResultSet rs;
+                String kursi_user_query = "INSERT INTO tb_booking_gk (nama_film, hari, jam, nomor_kursi, jumlah_tiket, total_harga) VALUES (?,?,?,?,?,?)" ;
+                
+                
+                try {
+                    // memanggil class javatomysql
+                    ps = javatomysql.getConnection().prepareStatement(kursi_user_query);
+                    // mengambil inputan
+                    ps.setString(1, namafilm);
+                    ps.setString(2, hari);
+                    ps.setString(3, jamtayang);
+                    ps.setString(4, nokursi);
+                    ps.setString(5, jumlahtiket);
+                    ps.setString(6, harga_total);
+
+                    if(ps.executeUpdate()!=0){
+                        // pesan sukses
+                        JOptionPane.showMessageDialog(null, "Your Ticket Successfully Booked!");
+                    }
+                    else{
+                        // pesan error
+                        JOptionPane.showMessageDialog(null, "Error : Check Your Information");
+                    }
+
+                } catch (SQLException ex) {
+                    Logger.getLogger(KursiStudioGK.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
         
     }//GEN-LAST:event_buttonnextActionPerformed
 
@@ -531,12 +575,14 @@ public class KursiStudioGK extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonbackActionPerformed
 
     private void checkbox_a1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbox_a1ActionPerformed
+        counter++;
         kursi = tf_nokursi.getText()+ checkbox_a1.getText();
         tf_nokursi.setText(kursi);
         checkbox_a1.setEnabled(false);
     }//GEN-LAST:event_checkbox_a1ActionPerformed
 
     private void checkbox_a2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbox_a2ActionPerformed
+        counter++;
         kursi = tf_nokursi.getText()+ checkbox_a2.getText();
         tf_nokursi.setText(kursi);
         checkbox_a2.setEnabled(false);
@@ -549,7 +595,8 @@ public class KursiStudioGK extends javax.swing.JFrame {
         tf_uangkembali.setText("");
         tf_nokursi.setText("");
         cb_hari.setSelectedIndex(0);
-        
+        counter= 0;
+         
         checkbox_a1.setEnabled(true); 
         checkbox_a2.setEnabled(true);
         checkbox_a3.setEnabled(true);
@@ -577,60 +624,70 @@ public class KursiStudioGK extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonresetActionPerformed
 
     private void checkbox_b1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbox_b1ActionPerformed
+        counter++;
         kursi = tf_nokursi.getText()+ checkbox_b1.getText();
         tf_nokursi.setText(kursi);
         checkbox_b1.setEnabled(false);
     }//GEN-LAST:event_checkbox_b1ActionPerformed
 
     private void checkbox_a3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbox_a3ActionPerformed
+        counter++;
         kursi = tf_nokursi.getText()+ checkbox_a3.getText();
         tf_nokursi.setText(kursi);
         checkbox_a3.setEnabled(false);
     }//GEN-LAST:event_checkbox_a3ActionPerformed
 
     private void checkbox_a4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbox_a4ActionPerformed
+        counter++;
         kursi = tf_nokursi.getText()+ checkbox_a4.getText();
         tf_nokursi.setText(kursi);
         checkbox_a4.setEnabled(false);
     }//GEN-LAST:event_checkbox_a4ActionPerformed
 
     private void checkbox_a5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbox_a5ActionPerformed
+        counter++;
         kursi = tf_nokursi.getText()+ checkbox_a5.getText();
         tf_nokursi.setText(kursi);
         checkbox_a5.setEnabled(false);
     }//GEN-LAST:event_checkbox_a5ActionPerformed
 
     private void checkbox_a6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbox_a6ActionPerformed
+        counter++;
         kursi = tf_nokursi.getText()+ checkbox_a6.getText();
         tf_nokursi.setText(kursi);
         checkbox_a6.setEnabled(false);
     }//GEN-LAST:event_checkbox_a6ActionPerformed
 
     private void checkbox_b2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbox_b2ActionPerformed
+        counter++;
         kursi = tf_nokursi.getText()+ checkbox_b2.getText();
         tf_nokursi.setText(kursi);
         checkbox_b2.setEnabled(false);
     }//GEN-LAST:event_checkbox_b2ActionPerformed
 
     private void checkbox_b3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbox_b3ActionPerformed
+        counter++;
         kursi = tf_nokursi.getText()+ checkbox_b3.getText();
         tf_nokursi.setText(kursi);
         checkbox_b3.setEnabled(false);
     }//GEN-LAST:event_checkbox_b3ActionPerformed
 
     private void checkbox_b4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbox_b4ActionPerformed
+        counter++;
         kursi = tf_nokursi.getText()+ checkbox_b4.getText();
         tf_nokursi.setText(kursi);
         checkbox_b4.setEnabled(false);
     }//GEN-LAST:event_checkbox_b4ActionPerformed
 
     private void checkbox_b5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbox_b5ActionPerformed
+        counter++;
         kursi = tf_nokursi.getText()+ checkbox_b5.getText();
         tf_nokursi.setText(kursi);
         checkbox_b5.setEnabled(false);
     }//GEN-LAST:event_checkbox_b5ActionPerformed
 
     private void checkbox_b6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbox_b6ActionPerformed
+        counter++;
         kursi = tf_nokursi.getText()+ checkbox_b6.getText();
         tf_nokursi.setText(kursi);
         checkbox_b6.setEnabled(false);
@@ -657,6 +714,13 @@ public class KursiStudioGK extends javax.swing.JFrame {
             harga = 65000;
         }
     }//GEN-LAST:event_cb_hariActionPerformed
+     
+    private void konfirmasiActionPerformed(java.awt.event.ActionEvent evt) {                                           
+
+        hasil = counter * harga;
+        tf_harga.setText(String.valueOf(hasil));
+        tf_jmltiket.setText(String.valueOf(counter));
+    } 
 
     private void tf_jmltiketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_jmltiketActionPerformed
        
@@ -665,12 +729,6 @@ public class KursiStudioGK extends javax.swing.JFrame {
     private void tf_uangbyrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_uangbyrActionPerformed
   
     }//GEN-LAST:event_tf_uangbyrActionPerformed
-
-    private void tf_jmltiketKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_jmltiketKeyReleased
-        jumlah =Integer.parseInt(String.valueOf(tf_jmltiket.getText()));  
-        hasil = jumlah * harga;
-        tf_harga.setText(String.valueOf(hasil));
-    }//GEN-LAST:event_tf_jmltiketKeyReleased
 
     private void tf_hargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_hargaActionPerformed
         if(cb_hari.getSelectedItem().equals("Senin")){
@@ -699,11 +757,6 @@ public class KursiStudioGK extends javax.swing.JFrame {
     private void tf_jamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_jamActionPerformed
        
     }//GEN-LAST:event_tf_jamActionPerformed
-
-    private void tf_jamKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_jamKeyReleased
-
-  
-    }//GEN-LAST:event_tf_jamKeyReleased
 
     /**
      * @param args the command line arguments
@@ -813,6 +866,7 @@ public class KursiStudioGK extends javax.swing.JFrame {
     private javax.swing.JPanel judul3;
     private javax.swing.JPanel judul4;
     private javax.swing.JPanel judul5;
+    private javax.swing.JButton konfirmasi;
     private javax.swing.JTextField tf_harga;
     public static javax.swing.JTextField tf_jam;
     private javax.swing.JTextField tf_jmltiket;
