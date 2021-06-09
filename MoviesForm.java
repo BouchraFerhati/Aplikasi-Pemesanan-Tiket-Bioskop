@@ -361,55 +361,30 @@ public class MoviesForm extends javax.swing.JFrame {
 
     private void buttongodzillaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttongodzillaActionPerformed
 
-        KursiStudioGK godzilla = new KursiStudioGK();
+        DetailGodzilla godzilla = new DetailGodzilla();
         godzilla.setVisible(true);
         godzilla.pack();
         godzilla.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.dispose();
         
-        film="Godzilla VS Kong";
-        buttonnerve.setSelected(false);
-        buttonthebox.setSelected(false);
-        
-        KursiStudioGK.tf_namafilm.setText(film);
-        
-        KursiStudioGK.tf_jam.setText("12.30-14.00");
-        
-
     }//GEN-LAST:event_buttongodzillaActionPerformed
 
     private void buttontheboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttontheboxActionPerformed
-        KursiStudioTB thebox = new KursiStudioTB();
+        DetailTheBox thebox = new DetailTheBox();
         thebox.setVisible(true);
         thebox.pack();
         thebox.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.dispose();
-        
-        film="The Box";
-        buttongodzilla.setSelected(false);
-        buttonnerve.setSelected(false);
-        
-        KursiStudioTB.tf_namafilm.setText(film);
-        KursiStudioTB.tf_jam.setText("15.00-18.00");
-        
-       
-        
+     
     }//GEN-LAST:event_buttontheboxActionPerformed
 
     private void buttonnerveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonnerveActionPerformed
-        KursiStudioNerve nerve = new KursiStudioNerve();
+       
+        DetailNerve nerve = new DetailNerve();
         nerve.setVisible(true);
         nerve.pack();
         nerve.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.dispose();
-        
-        film="Nerve";
-        buttongodzilla.setSelected(false);
-        buttonthebox.setSelected(false);
-        
-        KursiStudioNerve.tf_namafilm.setText(film);
-        
-        KursiStudioNerve.tf_jam.setText("19.00-21.30");
        
     }//GEN-LAST:event_buttonnerveActionPerformed
 
